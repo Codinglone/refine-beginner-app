@@ -11,7 +11,7 @@ import { yariga    } from "assets";
 import { CredentialResponse } from "../interfaces/google";
 
 // Todo: Update your Google Client ID here
-const GOOGLE_CLIENT_ID = JSON.stringify(process.env.REACT_APP_GOOGLE_CLIENT_ID);
+const GOOGLE_CLIENT_ID = '883730261277-qtl2is6tk6gc7034i7ks3c6do3fis3qu.apps.googleusercontent.com';
 
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
@@ -77,8 +77,8 @@ export const Login: React.FC = () => {
           Powered by
           <img
             style={{ padding: "0 5px" }}
-            alt="Google"
-            src="https://refine.ams3.cdn.digitaloceanspaces.com/superplate-auth-icons%2Fgoogle.svg"
+            alt="Yariga Logo"
+            src={yariga}
           />
           Google
         </Typography>
