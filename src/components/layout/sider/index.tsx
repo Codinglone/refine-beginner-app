@@ -419,7 +419,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
                             justifyContent: "center",
                         }}
                     >
-                        <RenderToTitle collapsed={collapsed} />
+                        <DefaultTitle collapsed={collapsed} />
                     </Box>
                     <Box
                         sx={{

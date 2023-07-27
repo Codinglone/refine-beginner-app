@@ -1,7 +1,6 @@
 import {
   AuthBindings,
   Authenticated,
-  GitHubBanner,
   Refine,
 } from "@refinedev/core";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
@@ -41,6 +40,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { parseJwt } from "utils/parse-jwt";
 import { Header } from "./components/header";
 import { Sider } from "./components/layout/sider";
+import { Title } from "./components/layout/title"
 import { ColorModeContextProvider } from "./contexts/color-mode";
 
 const axiosInstance = axios.create();
@@ -178,7 +178,9 @@ function App() {
                 <Route
                   element={
                     <Authenticated fallback={<CatchAllNavigate to="/login" />}>
-                      <ThemedLayoutV2 Sider={() => <Sider />} Header={() => <Header isSticky={true} />}>
+                      <ThemedLayoutV2 Title={({ collapsed }) => (
+                            <Title collapsed={collapsed} />
+                        )} Sider={() => <Sider />} Header={() => <Header isSticky={true} />}>
                         <Outlet />
                       </ThemedLayoutV2>
                     </Authenticated>
